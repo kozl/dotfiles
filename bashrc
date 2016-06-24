@@ -26,12 +26,5 @@ fi
 # 02. Aliases                                                                #
 ##############################################################################
 # Enable colors in "ls" command output
-alias ls="ls -Glah"
-
-##############################################################################
-# 03. Theme/Colors                                                           #
-##############################################################################
-# CLI Colors
-export CLICOLOR=1
-# Set "ls" colors
-export LSCOLORS=Gxfxcxdxbxegedabagacad
+alias ls="ls --color=auto"
+alias ll="ls -al"
