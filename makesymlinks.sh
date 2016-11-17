@@ -56,7 +56,7 @@ else
             install_zsh
         fi
         if [[ -f /etc/debian_version ]]; then
-            sudo apt-get install zsh
+            sudo apt-get install -y zsh
             install_zsh
         fi
     # If the platform is OS X, tell the user to install zsh :)
