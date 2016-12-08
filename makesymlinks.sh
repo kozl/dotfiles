@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ############################
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
@@ -37,7 +37,7 @@ done
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
-if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
+if [ -f /bin/zsh -o -f /usr/bin/zsh -o -f /usr/local/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
