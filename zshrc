@@ -59,6 +59,10 @@ plugins=(git mercurial debian battery tmux sudo web-search common-aliases comple
 
 source $ZSH/oh-my-zsh.sh
 
+if [[ -r ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
