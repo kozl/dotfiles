@@ -9,6 +9,7 @@
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc oh-my-zsh gitconfig"    # list of files/folders to symlink in homedir
+user=$(whoami)
 
 ##########
 
@@ -43,8 +44,8 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh -o -f /usr/local/bin/zsh ]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
-    if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        sudo chsh -s $(which zsh)
+    if [[ ! $(basename $SHELL) == $(which zsh) ]]; then
+        sudo chsh -s $(which zsh) $user
     fi
 else
     # If zsh isn't installed, get the platform of the current machine
