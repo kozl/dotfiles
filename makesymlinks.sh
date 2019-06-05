@@ -42,6 +42,8 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh -o -f /usr/local/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
+        git clone https://github.com/denysdovhan/spaceship-prompt.git "oh-my-zsh/themes/spaceship-prompt"
+        ln -s "oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "oh-my-zsh/themes/spaceship.zsh-theme"
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(basename $SHELL) == $(which zsh) ]]; then
