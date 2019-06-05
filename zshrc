@@ -6,7 +6,17 @@
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="clean"
-ZSH_THEME="ys"
+#ZSH_THEME="ys"
+ZSH_THEME="spaceship"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_CHAR_SYMBOL="$"
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_CHAR_COLOR_SUCCESS="red"
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_TIME_PREFIX="["
+SPACESHIP_TIME_SUFFIX="] "
+SPACESHIP_EXIT_CODE_SHOW="true"
+SPACESHIP_KUBECONTEXT_COLOR="blue"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +60,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mercurial debian battery tmux sudo web-search common-aliases compleat)
+plugins=(git mercurial debian battery tmux sudo web-search common-aliases compleat docker kubectl bundler)
 
 # User configuration
 
