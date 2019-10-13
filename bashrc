@@ -28,3 +28,5 @@ fi
 # Enable colors in "ls" command output
 alias ls="ls --color=auto"
 alias ll="ls -al"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

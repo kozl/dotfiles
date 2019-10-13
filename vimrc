@@ -29,14 +29,14 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 
 " Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
-set ofu=syntaxcomplete#Complete
+" set ofu=syntaxcomplete#Complete
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
-"colorscheme molokai       " set colorscheme
+" colorscheme molokai       " set colorscheme
 
 " Prettify JSON files
 autocmd BufRead,BufNewFile *.json set filetype=json
@@ -60,7 +60,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number                " show line numbers
+set relativenumber        " show relative line numbers
 set numberwidth=6         " make the number gutter 6 characters wide
 "set cul                   " highlight current line
 set laststatus=2          " last window always has a statusline
@@ -104,6 +104,10 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 
+let g:deoplete#enable_at_startup = 1
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/plugged/vim-go/gosnippets/UltiSnips']
+
 colorscheme molokai
 
 " run :GoBuild or :GoTestCompile based on the go file
@@ -127,7 +131,15 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 call plug#begin()
 Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'fatih/molokai'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
